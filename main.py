@@ -141,7 +141,7 @@ async def main():
             level=config.get_log_level(),
         )
 
-    await check_alune_version()
+    # await check_alune_version()
 
     adb_instance = ADB(config)
 
