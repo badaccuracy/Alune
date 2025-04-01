@@ -175,7 +175,9 @@ class TFTApp:
         ):
             return GameStateImageResult(GameState.MAIN_MENU)
 
-        if image_result := screen.get_on_screen(screenshot, Image.NORMAL_GAME):
+
+        game_mode_image = Image.RANKED if self.config.get_game_mode() == "ranked" else Image.NORMAL_GAME
+        if image_result := screen.get_on_screen(screenshot, game_mode_image):
             return GameStateImageResult(game_state=GameState.CHOOSE_MODE, image_result=image_result)
 
         if screen.get_button_on_screen(screenshot, Button.check):
