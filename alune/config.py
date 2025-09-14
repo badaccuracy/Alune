@@ -108,7 +108,7 @@ class AluneConfig:
         Sanitize the user configured game mode by checking against valid values.
         """
         game_mode = self._config.get("game_mode", "normal")
-        if game_mode not in {"normal"}:
+        if game_mode not in {"normal", "doubleup"}:
             logger.warning(f"The configured game mode '{game_mode}' does not exist. Playing 'normal' instead.")
             self._config["game_mode"] = "normal"
 
